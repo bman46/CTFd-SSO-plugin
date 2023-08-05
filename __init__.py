@@ -43,6 +43,8 @@ def update_login_template(app):
 
         new_template = original[:pos] + injecting + original[pos:]
         override_template('login.html', new_template)
+    else:
+        print("Error templating buttons: could not find Forms.auth.LoginForm")
 
 
 def load(app):
