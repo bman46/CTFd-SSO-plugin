@@ -24,7 +24,7 @@ class OAuthClients(db.Model):
             access_token_url=self.access_token_url,
             authorize_url=self.authorize_url,
             api_base_url=self.api_base_url,
-            client_kwargs={'scope': 'profile roles'}
+            client_kwargs={'scope': 'oauth profile roles'}
         )
 
     def disconnect(self, oauth):
