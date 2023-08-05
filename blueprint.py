@@ -25,6 +25,7 @@ class OAuthForm(BaseForm):
     access_token_url = StringField("Access token url", validators=[InputRequired()])
     authorize_url = StringField("Authorization url", validators=[InputRequired()])
     api_base_url = StringField("User info url", validators=[InputRequired()])
+    jwks_uri = StringField("jwks url", validators=[InputRequired()])
     submit = SubmitField("Add")
 
 
@@ -59,6 +60,7 @@ def load_bp(oauth):
             access_token_url = request.form["access_token_url"]
             authorize_url = request.form["authorize_url"]
             api_base_url = request.form["api_base_url"]
+            jwks_uri = request.form["jwks_uri"]
 
             client = OAuthClients(
                 name=name,
@@ -66,7 +68,8 @@ def load_bp(oauth):
                 client_secret=client_secret,
                 access_token_url=access_token_url,
                 authorize_url=authorize_url,
-                api_base_url=api_base_url
+                api_base_url=api_base_url,
+                jwks_uri=jwks_uri
             )
             db.session.add(client)
             db.session.commit()

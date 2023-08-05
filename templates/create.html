@@ -25,12 +25,16 @@
 					{{ form.client_secret(class="form-control", value=client_secret) }}
 				</div>
 				<div class="form-group">
+					<b>{{ form.authorize_url.label }}</b>
+					{{ form.authorize_url(class="form-control", value=authorize_url) }}
+				</div>
+				<div class="form-group">
 					<b>{{ form.access_token_url.label }}</b>
 					{{ form.access_token_url(class="form-control", value=access_token_url) }}
 				</div>
 				<div class="form-group">
-					<b>{{ form.authorize_url.label }}</b>
-					{{ form.authorize_url(class="form-control", value=authorize_url) }}
+					<b>{{ form.jwks_uri.label }}</b>
+					{{ form.jwks_uri(class="form-control", value=jwks_uri) }}
 				</div>
 				<div class="form-group">
 					<b>{{ form.api_base_url.label }}</b>
