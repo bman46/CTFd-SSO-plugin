@@ -26,7 +26,7 @@ class OAuthClients(db.Model):
             authorize_url=self.authorize_url,
             api_base_url=self.api_base_url,
             jwks_uri=self.jwks_uri,
-            client_kwargs={'scope': 'openid profile roles'}
+            client_kwargs={'scope': 'openid email profile roles'}
         )
 
     def disconnect(self, oauth):
