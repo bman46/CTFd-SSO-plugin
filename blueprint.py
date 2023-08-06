@@ -103,7 +103,7 @@ def load_bp(oauth):
         user = Users.query.filter_by(email=user_email).first()
         if user is None:
             # Check if we are allowing registration before creating users
-            if registration_visible() or get_app_config("OAUTH_ALWAYS_POSSIBLE") == True:
+            if registration_visible() or bool(get_app_config("OAUTH_ALWAYS_POSSIBLE")):
                 user = Users(
                     name=user_name,
                     email=user_email,
